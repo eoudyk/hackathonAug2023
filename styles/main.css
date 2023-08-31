@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: whitesmoke;
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,7 @@
+@use "./partials/header";
+@use "./partials/resets" as *;
+@use "./partials/variables" as *;
+
+.header {
+  background-color: whitesmoke;
+}
