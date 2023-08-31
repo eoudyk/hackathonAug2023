@@ -2,20 +2,47 @@
 @use "./partials/resets" as *;
 @use "./partials/variables" as *;
 @use "./partials/fonts" as *;
-
-.header {
-  background-color: whitesmoke;
-}
+@use "./partials/footer";
 
 .weather {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: bisque;
-  background-image: url("https://unsplash.com/photos/hRg1KL4-AUE");
-  height: 100vh;
+  justify-content: center;
+  background-image: url("./nature-colorful-landscape-dusk-cloud.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 60vh;
 }
 
-.forecast-card {
-  background-color: adjust-hue($color: #ffffffa8, $degrees: 0);
+.forecast {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.4px);
+  -webkit-backdrop-filter: blur(5.4px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.forecast__title {
+  padding: 3rem;
+  font-size: 100px;
+  text-align: center;
+}
+
+.forecast__info {
+  font-weight: bolder;
+  text-align: center;
+  font-size: 40px;
+  margin: 20px;
+}
+
+.forecast__update-time {
+  text-align: center;
+}
+
+.profanity {
+  color: maroon;
+  font-size: 50px;
 }

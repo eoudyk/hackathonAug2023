@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sweary Weather</title>
+    <title>What the Weather</title>
     <script src="./scripts/index.js" defer></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/d3.min.js"></script>
@@ -11,7 +11,8 @@
   </head>
   <body>
     <header class="header">
-      <a href="index.html" class="header__link">Home</a>
+      <a href="index.html" class="header__link">What the Weather</a>
+      <p>Angry, sweary weather updates</p>
       <!-- DROPDOWN -->
       <select list="cities" class="header__dropdown" id="citiesInput">
         <!-- <select list="cities" id="citiesInput" > -->
@@ -114,31 +115,35 @@
     <!-- MAIN -->
     <main>
       <section class="weather">
-        <div class="forecast">
-          <!-- city output -->
-          <!-- <h1 class="forecast__title">city</h1>
-          <p class="forecast__info">prof+ forecast</p> -->
-        </div>
-        <!-- BACKGROUND IMAGE-->
         <div class="forecast-card">
-          <h2 class="forecast-card__info">Forecast!</h2>
-          <!--WIDGET OR FORECAST CARD-->
-        </div>
-        <div id="openweathermap-widget-11"></div>
-
-        <section class="weather">
           <div class="forecast">
-            <!-- city output -->
-            <h1 class="forecast__title">city</h1>
-            <p class="forecast__text">prof+ forecast</p>
+            <!-- js info -->
           </div>
-          <!-- BACKGROUND IMAGE-->
-          <div class="forecast-card">
-            <h2 class="forecast-card__info">Forecast!</h2>
-            <!--WIDGET OR FORECAST CARD-->
-          </div>
-        </section>
+        </div>
       </section>
     </main>
+    <footer class="footer">
+      <h4 class="footer__title">Created by:</h4>
+      <div class="footer__creators">
+        <a
+          href="https://www.linkedin.com/in/emilyoudyk"
+          target="_blank"
+          class="footer__authors"
+          >Emily Oudyk</a
+        >
+        <a
+          href="https://www.linkedin.com/in/victoria-yeremchuk/"
+          target="_blank"
+          class="footer__authors"
+          >Victoria Yeremchuk</a
+        >
+        <a
+          href="https://www.linkedin.com/in/marwankn/"
+          target="_blank"
+          class="footer__authors"
+          >Marwan Nofal</a
+        >
+      </div>
+    </footer>
   </body>
 </html>

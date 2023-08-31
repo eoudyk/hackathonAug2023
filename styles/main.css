@@ -16,47 +16,98 @@ body {
 .header {
   height: 20vh;
   display: flex;
+  background-color: rgb(143, 186, 230);
+  color: white;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .header__dropdown {
-  width: 10rem;
-}
-
-.header__link {
-  text-decoration: none;
+  font-size: 16px;
   color: black;
-  font-size: 30px;
-}
-.header__link:hover {
-  text-decoration: underline;
-}
-
-.header__dropdown {
-  width: 10vw;
+  margin: 1rem 0;
+  width: 30vw;
   height: 1.5rem;
   text-align: center;
   border: 0px;
+  border-radius: 5px;
 }
 .header__dropdown:hover {
-  background-color: rgba(211, 211, 211, 0.749);
-  border-color: white;
+  background-color: rgba(236, 236, 236, 0.496);
+  box-shadow: 0 2.8px 2.2px rgba(255, 255, 255, 0.603), 0 6.7px 5.3px rgba(255, 255, 255, 0.449), 0 10.3px 17.9px rgba(255, 255, 255, 0.072), 0 10.8px 33.4px rgba(255, 255, 255, 0.457);
+}
+.header__link {
+  text-decoration: none;
+  font-size: 45px;
+  color: rgb(255, 255, 255);
+}
+.header__link:hover {
+  text-decoration: overline;
 }
 
-.header {
-  background-color: whitesmoke;
+.footer {
+  background-color: darkgrey;
+  height: 20vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 2rem;
+  font-size: 30px;
+}
+.footer__title {
+  align-self: center;
+}
+.footer__authors {
+  text-decoration: none;
+  color: white;
+  padding: 2rem;
+  font-size: 20px;
+}
+.footer__creators {
+  display: flex;
+  justify-content: center;
 }
 
 .weather {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: bisque;
-  background-image: url("https://unsplash.com/photos/hRg1KL4-AUE");
-  height: 100vh;
+  justify-content: center;
+  background-image: url("./nature-colorful-landscape-dusk-cloud.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 60vh;
 }
 
-.forecast-card {
-  background-color: rgba(255, 255, 255, 0.6588235294);
+.forecast {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.4px);
+  -webkit-backdrop-filter: blur(5.4px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.forecast__title {
+  padding: 3rem;
+  font-size: 100px;
+  text-align: center;
+}
+
+.forecast__info {
+  font-weight: bolder;
+  text-align: center;
+  font-size: 40px;
+  margin: 20px;
+}
+
+.forecast__update-time {
+  text-align: center;
+}
+
+.profanity {
+  color: maroon;
+  font-size: 50px;
 }/*# sourceMappingURL=main.css.map */

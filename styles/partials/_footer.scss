@@ -1,0 +1,23 @@
+.footer {
+  background-color: darkgrey;
+  height: 20vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 2rem;
+  font-size: 30px;
+  &__title {
+    align-self: center;
+  }
+  &__authors {
+    text-decoration: none;
+    color: white;
+    padding: 2rem;
+    font-size: 20px;
+  }
+  &__creators {
+    display: flex;
+    justify-content: center;
+  }
+}

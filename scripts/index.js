@@ -12,12 +12,25 @@ const dropdown = document.getElementById("citiesInput");
 
 dropdown.addEventListener("change", function (e) {
   //   console.log(e.target.value);
+
   const query = e.target.value;
   const url = `${baseURL}/2.5/weather?q=${query},ca&appid=${apiKey}&${unit}`;
 
+  const profList = [
+    "Bitch",
+    "Motherfucker",
+    "Shit",
+    "Fuck knuckle",
+    "Twathead",
+    "Wanker",
+    "Cheese Eating Surrender Monkeys",
+    "Arse-licker",
+    "Bugger",
+    "Fuck me dead",
+  ];
+  const randomProf = profList[Math.floor(Math.random() * profList.length)];
   console.log("url", url);
 
-  // example
   axios
     .get(url)
     .then((response) => {
@@ -25,6 +38,7 @@ dropdown.addEventListener("change", function (e) {
 
       // select the container element
       const weatherContainer = document.querySelector(".forecast");
+      weatherContainer.innerHTML = "";
 
       // city title
       const cityTitle = document.createElement("h1");
@@ -41,32 +55,37 @@ dropdown.addEventListener("change", function (e) {
 
       // profanity:
       const printedProf = document.querySelector(".profanity");
-
       printedProf.innerText = randomProf;
 
       //  current forecast line:
       const temp = document.querySelector(".temp");
       temp.innerText = Math.trunc(response.data.main.temp);
 
-      // Widget
+      //   other weather info:
 
-      window.myWidgetParam ? window.myWidgetParam : (window.myWidgetParam = []);
-      window.myWidgetParam.push({
-        id: 11,
-        cityid: response.data.id,
-        appid: "c0804e951c76408d6b688ae4bd965f44",
-        units: "metric",
-        containerid: "openweathermap-widget-11",
-      });
-      (function () {
-        var script = document.createElement("script");
-        script.async = true;
-        script.charset = "utf-8";
-        script.src =
-          "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(script, s);
-      })();
+      const furtherDescription = document.createElement("p");
+      furtherDescription.classList.add("forecast__info");
+      furtherDescription.innerText = `Expect ${response.data.weather[0].description}`;
+      weatherContainer.appendChild(furtherDescription);
+
+      let timestamp = response.data.dt;
+
+      var date = new Date(timestamp * 1000);
+      // Hours part from the timestamp
+      var hours = date.getHours();
+      // Minutes part from the timestamp
+      var minutes = "0" + date.getMinutes();
+      // Seconds part from the timestamp
+      var seconds = "0" + date.getSeconds();
+
+      // Will display time in 10:30:23 format
+      var formattedTime =
+        hours + ":" + minutes.substr(-2) + ":" + seconds.substr(-2);
+
+      const lastUpdated = document.createElement("p");
+      lastUpdated.classList.add("forecast__update-time");
+      lastUpdated.innerText = `Last Updated at ${formattedTime}`;
+      weatherContainer.appendChild(lastUpdated);
     })
     .catch((error) => {
       console.error(error);
@@ -75,22 +94,5 @@ dropdown.addEventListener("change", function (e) {
 });
 
 // Profanity list
-const profList = ["Bitch", "Motherfucker", "Damn", "Shit", "Fuck", "Twathead"];
-const randomProf = profList[Math.floor(Math.random() * profList.length)];
-
-// Profanity
-
-// // prof+ forecast
-// const forecastInfo = document.createElement("p");
-// forecastInfo.classList.add("forecast__info");
-// forecastContainer.appendChild(forecastInfo);
-
-// // Forecast card
-// const forecastCard = document.createElement("div");
-// forecastCard.classList.add("forecast-card");
-// weatherContainer.appendChild(forecastCard);
-
-// // Widget
-// const widgetCard = document.createElement("h2");
-// widgetCard.classList.add("forecast-card__info");
-// forecastCard.appendChild(widgetCard);
+// const profList = ["Bitch", "Motherfucker", "Damn", "Shit", "Fuck", "Twathead"];
+// const randomProf = profList[Math.floor(Math.random() * profList.length)];
