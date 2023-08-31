@@ -4,32 +4,140 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sweary Weather</title>
-    <script src="./index.js" defer></script>
+    <script src="./scripts/index.js" defer></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/d3.min.js"></script>
     <link rel="stylesheet" href="./styles/main.css" />
   </head>
   <body>
     <header class="header">
-      <a href="index.html" class="header-link">Home</a>
+      <a href="index.html" class="header__link">Home</a>
       <!-- DROPDOWN -->
-      <select name="city" class="header-dropdown">
-        <option value="toronto" class="header-dropdown-city">Toronto</option>
-        <option value="london" class="header-dropdown-city">London</option>
-        <option value="miami" class="header-dropdown-city">Miami</option>
+      <select list="cities" class="header__dropdown" id="citiesInput">
+        <!-- <select list="cities" id="citiesInput" > -->
+        <option value="none" selected disabled hidden>Select a City</option>
+        <option value="Toronto" class="header__dropdown-city">
+          Toronto, CA
+        </option>
+        <option value="Montreal" class="header__dropdown-city">
+          Montreal, CA
+        </option>
+        <option value="Vancouver" class="header__dropdown-city">
+          Vancouver, CA
+        </option>
+        <option value="Calgary" class="header__dropdown-city">
+          Calgary, CA
+        </option>
+        <option value="Edmonton" class="header__dropdown-city">
+          Edmonton, CA
+        </option>
+        <option value="Ottawa" class="header__dropdown-city">Ottawa, CA</option>
+        <option value="Winnipeg" class="header__dropdown-city">
+          Winnipeg, CA
+        </option>
+        <option value="Quebec City" class="header__dropdown-city">
+          Quebec City, CA
+        </option>
+        <option value="Kitchener" class="header__dropdown-city">
+          Kitchener, CA
+        </option>
+        <option value="Halifax" class="header__dropdown-city">
+          Halifax, CA
+        </option>
+        <option value="Victoria" class="header__dropdown-city">
+          Victoria, CA
+        </option>
+        <option value="Mississauga" class="header__dropdown-city">
+          Mississauga, CA
+        </option>
+        <option value="Hamilton" class="header__dropdown-city">
+          Hamilton, CA
+        </option>
+        <option value="Brampton" class="header__dropdown-city">
+          Brampton, CA
+        </option>
+        <option value="Surrey" class="header__dropdown-city">Surrey, CA</option>
+        <option value="Laval" class="header__dropdown-city">Laval, CA</option>
+        <option value="London" class="header__dropdown-city">London, CA</option>
+        <option value="Markham" class="header__dropdown-city">
+          Markham, CA
+        </option>
+        <option value="Vaughan" class="header__dropdown-city">
+          Vaughan, CA
+        </option>
+        <option value="Gatineau" class="header__dropdown-city">
+          Gatineau, CA
+        </option>
+        <option value="Windsor" class="header__dropdown-city">
+          Windsor, CA
+        </option>
+        <option value="Saskatoon" class="header__dropdown-city">
+          Saskatoon, CA
+        </option>
+        <option value="Longueuil" class="header__dropdown-city">
+          Longueuil, CA
+        </option>
+        <option value="Burnaby" class="header__dropdown-city">
+          Burnaby, CA
+        </option>
+        <option value="Regina" class="header__dropdown-city">Regina, CA</option>
+        <option value="Richmond" class="header__dropdown-city">
+          Richmond, CA
+        </option>
+        <option value="Oakville" class="header__dropdown-city">
+          Oakville, CA
+        </option>
+        <option value="Burlington" class="header__dropdown-city">
+          Burlington, CA
+        </option>
+        <option value="Barrie" class="header__dropdown-city">Barrie, CA</option>
+        <option value="Oshawa" class="header__dropdown-city">Oshawa, CA</option>
+        <option value="Sherbrooke" class="header__dropdown-city">
+          Sherbrooke, CA
+        </option>
+        <option value="Saguenay" class="header__dropdown-city">
+          Saguenay, CA
+        </option>
+        <option value="Levis" class="header__dropdown-city">Levis, CA</option>
+        <option value="Kelowna" class="header__dropdown-city">
+          Kelowna, CA
+        </option>
+        <option value="Abbotsford" class="header__dropdown-city">
+          Abbotsford, CA
+        </option>
+        <option value="Coquitlam" class="header__dropdown-city">
+          Coquitlam, CA
+        </option>
       </select>
     </header>
 
     <!-- MAIN -->
     <main>
-      <section class="forecast">
-        <!-- city output -->
-        <h1 class="forecast-title">city</h1>
-        <p class="forecast-text">prof+ forecast</p>
-        <img src="./" alt="Toronto" class="forecast-img" />
-        <!-- BACKGORUND IMAGE-->
+      <section class="weather">
+        <div class="forecast">
+          <!-- city output -->
+          <!-- <h1 class="forecast__title">city</h1>
+          <p class="forecast__info">prof+ forecast</p> -->
+        </div>
+        <!-- BACKGROUND IMAGE-->
         <div class="forecast-card">
-          <h2 class="forecast-card-info">Forecast!</h2>
+          <h2 class="forecast-card__info">Forecast!</h2>
           <!--WIDGET OR FORECAST CARD-->
         </div>
+        <div id="openweathermap-widget-11"></div>
+
+        <section class="weather">
+          <div class="forecast">
+            <!-- city output -->
+            <h1 class="forecast__title">city</h1>
+            <p class="forecast__text">prof+ forecast</p>
+          </div>
+          <!-- BACKGROUND IMAGE-->
+          <div class="forecast-card">
+            <h2 class="forecast-card__info">Forecast!</h2>
+            <!--WIDGET OR FORECAST CARD-->
+          </div>
+        </section>
       </section>
     </main>
   </body>
